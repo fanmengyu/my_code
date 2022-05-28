@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .shili {
+            width: 0;
+            height: 0;
+            border: 100px solid;
+            border-color: orange blue red green;
+        }
+        .shili2{
+            width: 0;
+            height: 0;
+            border: 100px solid;
+            border-color: orange blue red green;
+            border-left: transparent;
+        }
+        .sanjiao {
+            /* 思路：border属性是右三角形组成的，设置时只需要让腰方向上的三角形隐藏即可 */
+            height: 0;
+            width: 0;
+            border-bottom: 50px solid transparent;
+            border-left: 100px solid yellow;
+            border-top: 50px solid transparent;
+        }
+
+        .zhijiaosanjiao {
+            height: 0;
+            width: 0;
+            border-bottom: 100px solid red;
+            border-right: 100px solid transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shili"></div>
+    <div class="shili2"></div>
+    <div class="sanjiao"></div>
+    <div class="zhijiaosanjiao"> </div>
+</body>
+
+</html>

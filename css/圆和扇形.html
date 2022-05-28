@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圆和扇形</title>
+    <style>
+        .shanxing {
+            border: 100px solid transparent;
+            width: 0;
+            height: 0;
+            border-top-color: red;
+            border-radius: 100px;
+        }
+
+        .yuan {
+            background-color: #bfa;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .banyuan {
+            background-color: blue;
+            width: 100px;
+            height: 50px;
+            border-radius: 0px 0px 100px 100px;
+        }
+
+        .line {
+            /* 画出0.5px的线 */
+            height: 1px;
+            background: none;
+            box-shadow: 0 0.5px 0 #000;
+        }
+        .line2{
+             /* 画出0.5px的线 */
+            margin: 50px 50px;
+            height: 1px;
+            background-color: red;
+            transform: scale(0.5,0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shanxing"></div>
+    <div class="yuan"></div>
+    <div class="banyuan"></div>
+    <div class="line"></div>
+    <div class="line2"></div>
+</body>
+
+</html>
