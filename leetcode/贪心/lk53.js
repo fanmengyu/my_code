@@ -9,16 +9,16 @@ var maxSubArray = function(nums) {
     return res;
 };
 //
-var maxSubArray = function(nums) {
+var maxSubArrayttttt = function(nums) {
     let result = -Infinity
-    let count = 0
+    let sum = 0
     for(let i = 0; i < nums.length; i++) {
-        count += nums[i]
-        if(count > result) {
-            result = count
+        sum += nums[i]
+        if(sum > result) {
+            result = sum
         }
-        if(count < 0) {
-            count = 0
+        if(sum < 0) {
+            sum = 0
         }
     }
     return result
