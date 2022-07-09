@@ -8,15 +8,16 @@ var maxSubArray = function(nums) {
     }
     return res;
 };
-//
-var maxSubArrayttttt = function(nums) {
+
+//贪心算法
+var maxSubArray2 = function(nums) {
     let result = -Infinity
     let sum = 0
     for(let i = 0; i < nums.length; i++) {
         sum += nums[i]
         if(sum > result) {
             result = sum
-        }
+        }/*  */
         if(sum < 0) {
             sum = 0
         }
