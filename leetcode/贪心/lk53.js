@@ -8,8 +8,8 @@ var maxSubArray = function(nums) {
     }
     return res;
 };
-//
-var maxSubArray = function(nums) {
+//贪心算法
+var maxSubArray2 = function(nums) {
     let result = -Infinity
     let count = 0
     for(let i = 0; i < nums.length; i++) {
