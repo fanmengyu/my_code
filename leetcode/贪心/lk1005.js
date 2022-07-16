@@ -14,5 +14,3 @@ var largestSumAfterKNegations = function(nums, k) {
     k = 0;
     return nums.reduce((a, b) => a + b);
 }
-console.log('...')
-console.log(typeof null);

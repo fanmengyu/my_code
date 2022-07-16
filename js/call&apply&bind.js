@@ -26,14 +26,16 @@ Function.prototype.myCall = function (context) {
 };
 
 
-//方法二：
+//方法二：!!推荐
 //核心是改变this的指向，先将this赋值给obj.fn（最后要记得删掉），然后调用函数
-Function.prototype.myCall = function (obj, ...rest) {
+Function.prototype._myCall = function (obj) {
   if (typeof this !== "function") throw Error('error')
+  let args = [...arguments].slice(1)
   obj = obj || window
+  //使用symbol变量以避免变量重名，这是为了避免obj身上本来就有fn方法而引起覆盖
   let fn = Symbol('function')
   obj.fn = this
-  let result = obj.fn(...rest)
+  let result = obj.fn(...args)
   delete obj.fn
   return result
 }
@@ -46,6 +48,7 @@ Function.prototype.myApply = function (context) {
   if (typeof this !== "function") {
     throw new TypeError("Error");
   }
+  let fn = Symbol('function');
   let result = null;
   // 判断 context 是否存在，如果未传入则为 window
   context = context || window;
@@ -62,19 +65,6 @@ Function.prototype.myApply = function (context) {
   return result;
 };
 
-Function.prototype._apply = function(obj,...args){
-  if(typeof this !== 'function'){
-    throw Error('error');
-  }
-  obj = obj || window;
-  let fn = Symbol('function');
-  obj.fn = this;
-  //与call的主要区别
-  let result = obj.fn(args);
-  delete obj.fn;
-  return result
-}
-
 // bind 函数实现（可以借助call或 apply）
 Function.prototype.myBind = function (context) {
   // 判断调用对象是否为函数
@@ -87,10 +77,44 @@ Function.prototype.myBind = function (context) {
   return function Fn() {
     // 根据调用方式，传入不同绑定值
     return fn.apply(
+      //判断是否发生了new构造函数 
       this instanceof Fn ? this : context,
       args.concat(...arguments)
     );
   };
 };
+
+
+
+//测试
+var person = {
+  fullName: function() {
+      return this.firstName + " " + this.lastName;
+  }
+}
+var person1 = {
+  firstName:"Bill",
+  lastName: "Gates",
+}
+var person2 = {
+  firstName:"Steve",
+  lastName: "Jobs",
+}
+console.log(person.fullName._apply(person1))
+
+Function.prototype.myBind = function(context){
+  if (typeof this !== "function") {
+    throw new TypeError("Error");
+  }
+  // 获取参数
+  var args = [...arguments].slice(1);
+  let fn = this;
+
+  //bind并不是立即调用，只是改变this指向
+  return function Fn(){
+    return fn.apply(this instanceof Fn ? this : context)
+    args.concat(...arguments)
+  }
+}
 
 

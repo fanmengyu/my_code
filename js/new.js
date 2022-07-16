@@ -25,7 +25,7 @@ function _new(Fn, ...args) {
 
 //方法二：
 function objectFactory() {
-    let newObject = null;
+    let newObject = {};
     let constructor = Array.prototype.shift.call(arguments);
     let result = null;
     // 判断参数是否是一个函数
@@ -44,4 +44,6 @@ function objectFactory() {
   }
   // 使用方法
   objectFactory(constructor, arguments);
+
+
 

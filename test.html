@@ -2,30 +2,76 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .feihua {
+      font-size: 80px;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
 </head>
 
 <body>
-    <script>
-      Promise.resolve('1')
-  .then(res => {
-    console.log(res)
-  })
-  .finally(() => {
-    console.log('finally')
-  })
-Promise.resolve('2')
-  .finally(() => {
-    console.log('finally2')
-  	return '我是finally2返回的值'
-  })
-  .then(res => {
-    console.log('finally2后面的then函数', res)
-  })
-    </script>
+  <div class="feihua">
+    这是一堆废话
+  </div>
+  <div class="feihua">
+    这是一堆废话
+  </div>
+  <div class="feihua">
+    这是一堆废话
+  </div>
+  <div class="feihua">
+    这是一堆废话
+  </div>
+  <div class="feihua">
+    这是一堆废话
+  </div>
+  <div class="feihua">
+    这是一堆废话
+  </div>
+  <div class="feihua">
+    这是一堆废话
+  </div>
+  <div class="pic">
+    <img src="loading.gif" data-src="pic.jpg">
+    <br>
+    <img src="loading.gif" data-src="pic.jpg">
+    <br>
+    <img src="loading.gif" data-src="pic.jpg">
+    <br>
+    <img src="loading.gif" data-src="pic.jpg">
+    <img src="loading.gif" data-src="pic.jpg">
+    <img src="loading.gif" data-src="pic.jpg">
+  </div>
+  <script>
+    const images = document.querySelectorAll('img');
+
+    const callback = entries => {
+      entries.forEach(entry => {
+        const image = entry.target;
+        const data_src = image.getAttribute('data-src');
+        image.setAttribute('src', data_src);
+        observer.unobserve(image);
+        console.log('触发');
+      })
+    }
+
+    const observer = new IntersectionObserver(callback);
+
+    images.forEach(image => {
+      observer.observe(image);
+    })
+
+    console.log(typeof null);
+  </script>
 </body>
 
 </html>

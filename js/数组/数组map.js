@@ -10,3 +10,4 @@ Array.prototype._map = function(fn){
     }
     return res;
 }
+

@@ -30,6 +30,7 @@ function flatten3(arr){
     return arr;
 }
 
+
 //方法四：split toString
 function flatten4(arr){
     return arr.toString().split(',').map(Number);
@@ -37,11 +38,12 @@ function flatten4(arr){
 
 //方法五：ES6中flat
 function flatten5(arr){
-    return arr.flat(Infinity);
+    return arr.flat(Infinity);//这是由于flat默认只展开一层
 }
 //方法六：正则和JSON
 function flatten6(arr){
     let str = JSON.stringify(arr);
+    console.log(str)
     str = str.replace(/(\[|\])/g,'');
     str = '[' + str + ']';
     return JSON.parse(str);
