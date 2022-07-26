@@ -1,3 +1,6 @@
+//柯里化实现了参数复用
+//柯里化还可以实现兼容性检测
+
 function curry(fn,...args){
     let fnLen = fn.length,
         argsLen = args.length;
@@ -11,14 +14,15 @@ function curry(fn,...args){
     }else{
       return fn(...args)
     }
-  }
+  } 
 
 //实现 add(1)(2)(3)
 
-function add (...args) {
+function add(...args) {
     //求和
     return args.reduce((a, b) => a + b)
 }
+
 function currying (fn) {
     let args = []
     return function temp (...newArgs) {
@@ -35,7 +39,13 @@ function currying (fn) {
         }
     }
 }
-let addCurry = currying(add)
-console.log(addCurry(1)(2)(3)(4, 5)())  //15
-console.log(addCurry(1)(2)(3, 4, 5)())  //15
-console.log(addCurry(1)(2, 3, 4, 5)())  //15
+// console.log(add(1,2))
+let addCurry = curry(add,3,4)
+// console.log(addCurry(1)(2)(3)(4, 5)())  //15
+// console.log(addCurry(1)(2)(3, 4, 5)())  //15
+// console.log(addCurry(1)(2, 3, 4, 5)())  //15
+console.log(addCurry)
+
+
+
+
