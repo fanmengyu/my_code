@@ -9,3 +9,4 @@ Promise.race = function(args){
         }
     })
 }
+

@@ -50,4 +50,3 @@ let p3 = new Promise(function (resolve, reject) {
 promiseAll([p3, p1, p2]).then(res => {
     console.log(res) // [3, 1, 2]
 })
-

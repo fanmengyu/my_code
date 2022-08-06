@@ -27,10 +27,7 @@ function currying (fn) {
     let args = []
     return function temp (...newArgs) {
         if (newArgs.length) {
-            args = [
-                ...args,
-                ...newArgs
-            ]
+            args = [ ...args, ...newArgs]
             return temp
         } else {
             let val = fn.apply(this, args)

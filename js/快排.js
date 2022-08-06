@@ -4,7 +4,7 @@ function quicksort(arr){
     }
     //设置基准(取最中间的作为基准)
     let pivotIndex = Math.floor(arr.length/2);
-    let pivot = arr.splice(pivotIndex,1)[0];
+    let pivot = arr.splice(pivotIndex,1);
     let left = [];
     let right = [];
     for(let i = 0; i < arr.length; i++){

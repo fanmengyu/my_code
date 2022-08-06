@@ -13,3 +13,5 @@ Array.prototype.every_ = function(fn,target=window){
     }
     return res;
   }
+
+  
