@@ -44,5 +44,15 @@ let addCurry = curry(add,3,4)
 console.log(addCurry)
 
 
-
-
+function currying(fn){
+  let args = [];
+  return function temp(...newArgs){
+    if (newArgs.length) {
+      args = [...args, ...newArgs];
+    } else {
+      let val = fn.apply(this, args);
+      args = [];
+      return val;
+    }
+  }
+}

@@ -19,4 +19,30 @@ function mySetInterval(fn, timeout) {
     //返回控制器
     return timer;
 }
+var timer = mySetInterval2(fn, 1000);
+clearTimeout();
 
+function fn(){
+    console.log('1')
+}
+
+function mySetInterval2(fn, wait) {
+    let timer = null
+    function interval() {
+        timer = setTimeout(() => {
+            fn()
+            interval()
+        }, wait);
+    }
+    interval()
+    return {
+        cancel() {
+            clearTimeout(timer)
+        }
+    }
+}
+
+var time1 = setInterval(()=> {
+    console.log(222);
+},1000);
+clearInterval(time1);

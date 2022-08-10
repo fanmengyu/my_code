@@ -18,3 +18,4 @@ const rob = root => {
     // 返回最大值
     return Math.max(...res);
 };
+

@@ -65,7 +65,7 @@ Function.prototype.myApply = function (context) {
   return result;
 };
 
-// bind 函数实现（可以借助call或 apply）
+// bind 函数实现（可以借助call或 apply），不执行所以返回的是一个函数
 Function.prototype.myBind = function (context) {
   // 判断调用对象是否为函数
   if (typeof this !== "function") {
@@ -100,7 +100,7 @@ var person2 = {
   firstName:"Steve",
   lastName: "Jobs",
 }
-console.log(person.fullName._apply(person1))
+// console.log(person.fullName._apply(person1))
 
 Function.prototype.myBind = function(context){
   if (typeof this !== "function") {
@@ -118,3 +118,7 @@ Function.prototype.myBind = function(context){
 }
 
 
+//判断是否是函数；整理一下传入的参数，判断传入的上下文对象是否存在，不存在则设为window
+//为上下文对象添加方法fn（Symbol声明避免重复）contex.fn = this;
+//记录结果并返回，记得删除掉context.fn
+//apply主要区别在于要判断一下参数是否存在,不存在的话执行时不传入相应的参数

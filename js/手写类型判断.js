@@ -1,5 +1,5 @@
 // 1.主要思想是利用typeof，但是由于null array object 都会被判断为object，则需要进一步处理
-// 2.首先要考虑是null的情况
+// 2.首先要考虑值是null的情况
 
 var a =[1,2,3];
 function getType(value){

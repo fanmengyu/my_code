@@ -11,3 +11,5 @@ function handleTime(time){
     return y+m+d+h+mm+s+"星期"+arr[day];
 }
 console.log(handleTime(Date.now()))
+
+
