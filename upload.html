@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        #box1,#box2{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+        #box1{
+            border: 1px solid black;
+        }
+        #box2{
+            left: 0;
+            top: 0;
+            background-color: pink;
+        }
+        #picture{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <img id="picture" src="" alt="" >
+        <div id="box2">
+            <div id="svgbox"></div>
+            <div id="svgbox"></div>
+        </div>
+    </div>
+    <input id="fileupload" type="file"  name="picture" style="display:none;"/>
+    <script>
+        // var father = document.getElementById("box1");
+        // var imgFile = document.getElementById("fileupload");
+        // $('#box1').click(()=>{
+        //     $('#fileupload').click();
+        // })
+        /*
+* 点击图片，上传新图片
+* */
+$(document).on("click", "#box1", function (event) {
+    event.stopPropagation();
+    // 点击图片的同时，点击上传文件的input
+    $('#fileupload').click();
+	// 将上传的图片显示到页面上
+    $(document).on("change", "#fileupload", function () {
+        var fileObj = $("#fileupload")[0];
+        var img = document.getElementById('picture'); //获得用户上传的图片节点
+        var reader = new FileReader();
+        // 转换成功后的操作，img.src即为转换后的DataURL
+        if(fileObj.files[0].type.indexOf('image') == -1){
+            //不是图片
+            alert('error');
+            return;
+        }
+        reader.onload = function(e) {
+            if (reader.readyState === 2) { //加载完毕后赋值
+                img.src = e.target.result;
+                // console.log(img.src);
+            }
+        }
+        reader.readAsDataURL(fileObj.files[0]);
+        $('#box2').hide();
+    });
+});
+    </script>
+</body>
+</html>

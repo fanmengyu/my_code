@@ -13,3 +13,12 @@ const shuffle2 = (arr) => {
           [arr[j], arr[i]] = [arr[i], arr[j]]
       } 
   }
+
+
+function fun(arr){
+  return arr.sort(() => {
+    return Math.random() > 0.5 ? 1 : -1;
+  })
+}
+
+console.log(fun([1,2,3,4,5,6]))

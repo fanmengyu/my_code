@@ -7,6 +7,7 @@
 function ajax(url) {
 	const p = new Promise((resolve, reject) => {
 		const xhr = new XMLHttpRequest();
+		//第三个参数代表异步还是同步处理。true表示异步
 		xhr.open('GET', url, true);
 		xhr.onreadystatechange = function () {
 			if(xhr.readyState === 4) {
@@ -53,3 +54,5 @@ xhr.responseType = "json";
 xhr.setRequestHeader("Accept", "application/json");
 // 发送 Http 请求
 xhr.send(null);
+
+

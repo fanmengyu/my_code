@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="btn">点我</div>
+    <script>
+        window.onload = function(){
+            const start = window.performance.timing.domainLookupStart;
+            const end = window.performance.timing.domainLookupEnd;
+            console.log('domain', end - start);
+            const domLoading = window.performance.timing.domLoading;
+            const domComplete = window.performance.timing.domComplete;
+            console.log('dom', domComplete - domLoading);
+
+            const entries = window.performance.getEntries();
+            const dommainLookUpStart = entries[0].domainLookupStart;
+            const domainLookupEnd = entries[0].domainLookupEnd;
+            console.log(entries, domainLookupEnd - domainLookupEnd);
+
+            const fp = window.performance.getEntriesByType('paint');
+            console.log(fp);        
+        }
+
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', () => {
+            const text = document.createElement('span');
+            text.innerHTML = 'test';
+            btn.appendChild(text);
+        })
+    </script>
+</body>
+</html>

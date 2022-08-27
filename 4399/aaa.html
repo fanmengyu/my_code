@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="btn">11</div>
+    </div>
+    <script>
+        document.getElementsByClassName('btn')[0].style = "color:red;"
+        var rotateVal = 0 // 旋转角度
+        var InterVal // 定时器
+        window.onload = function () {
+            // 网页加载完成后即运行rotate函数
+            rotate()
+        }
+        // 鼠标悬浮在图片上时，停止旋转，即清除定时器
+        document.getElementsByClassName('btn')[0].onmousemove = function () {
+            clearInterval(InterVal)
+        }
+        // 鼠标离开图片时，继续旋转，即继续运行定时器
+        document.getElementsByClassName('btn')[0].onmouseleave = function () {
+            rotate()
+        }
+
+        // 设置定时器
+
+        function rotate() {
+            InterVal = setInterval(function () {
+                var btn = document.getElementsByClassName('btn')[0]
+                rotateVal += 1
+                let aa = 1 / 360;
+                // 设置旋转属性(顺时针)
+                btn.style.transform = 'rotate(' + rotateVal + 'deg)'
+                // 设置旋转属性(逆时针)
+                //btn.style.transform = 'rotate(-' + rotateVal + 'deg)'
+                // 设置旋转时的动画 匀速0.1s
+                btn.style.transition = `${aa}s linear`
+            }, 1)
+
+        }
+    </script>
+</body>
+
+</html>

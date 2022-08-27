@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. grid 布局
+        .father{
+            display: grid;
+            grid-template-columns: 100px auto;
+            height: 100px;
+            width: 100%;
+            border: 1px solid black;
+        }
+        .left {
+         background-color: #bfa;
+         height: 100px;   
+        }
+        .right{
+            background-color: pink;
+            height: 100px;
+
+        } */
+
+        /* 2.flex布局
+        .father{
+            display: flex;
+            height: 100px;
+            width: 100%;
+            border: 1px solid black;
+        }
+        .left {
+        width: 100px;
+         background-color: #bfa;
+         height: 100px;   
+        }
+        .right{
+            flex:1;
+            background-color: pink;
+            height: 100px;
+
+        } */
+
+        /* 3.float+overflow:hidden
+        .left {
+         float: left;
+         background-color: #bfa;
+         width: 100px;
+         height: 100px;   
+        }
+        .right{
+            background-color: pink;
+            height: 100px;
+            overflow: hidden;
+
+        } */
+
+        /* 4.float+margin-left
+        .father{
+            height: 100px;
+            width: 100%;
+            border: 1px solid black;
+        }
+        .left {
+        float: left;
+         width: 100px;
+         background-color: #bfa;
+         height: 100px;   
+        }
+        .right{
+            margin-left: 100px;
+            background-color: pink;
+            height: 100px;
+
+        } */
+
+        /* 5.定位+ 右侧margin-left
+        .father{
+            position: relative;
+            height: 100px;
+            width: 100%;
+            border: 1px solid black;
+        }
+        .left {
+        position: absolute;
+         width: 100px;
+         background-color: #bfa;
+         height: 100px;   
+        }
+        .right{
+            margin-left: 100px;
+            background-color: pink;
+            height: 100px;
+
+        }  */
+
+        .father{
+            position: relative;
+            height: 100px;
+            width: 100%;
+            border: 1px solid black;
+        }
+        .left {
+         width: 100px;
+         background-color: #bfa;
+         height: 100px;   
+        }
+        .right{
+            position: absolute;
+            left: 100px;
+            top:0;
+            right: 0;
+            bottom: 0;
+            background-color: pink;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+    </div>
+</body>
+</html>

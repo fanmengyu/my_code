@@ -57,7 +57,7 @@ let format2 = n => {
         }
     }
 }
-console.log(format2(12323562.33))
+// console.log(format2(12323562.33))
 
 
 
@@ -66,6 +66,5 @@ console.log(format2(12323562.33))
 //判断是否是3的整数倍，如果是比如100,100.直接每三位的后面加上，即可
 //如果不是，就先从前处理余下的部分加上，  其余部分规则如上
 //int.slice(0, remainder)+','+int.slice(remainder, len).match(/\d{3}/g).join(',')+temp;
-
 
 

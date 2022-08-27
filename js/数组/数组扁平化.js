@@ -1,6 +1,7 @@
 let arr = [1, [2, [3, 4, 5]]];
 let arr2 = [2,3];
-
+//扁平化核心就是要递归的去处理每一项
+//只要是数组就继续递归下去
 //方法一：递归
 //思路：如果每一项还是一个数组，那就继续往下遍历
 function flatten(arr){
@@ -49,5 +50,8 @@ function flatten6(arr){
     return JSON.parse(str);
 
 }
-console.log(flatten6(arr));
+// console.log(flatten6(arr));
 
+
+var str = "       Runoob        ";
+console.log(str.trim());

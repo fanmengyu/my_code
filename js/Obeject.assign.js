@@ -1,4 +1,6 @@
-//Object.assign()方法用于对象的合并，第一个参数是目标对象，后面的参数都是源对象。
+//Object.assign()方法用于对象的合并
+//用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
+//第一个参数是目标对象，后面的参数都是源对象。
 
 
 Object.myAssign = function(target, ...source) {
@@ -19,3 +21,4 @@ Object.myAssign = function(target, ...source) {
 }
 
 console.log(Object.myAssign({a:1},{b:2}))
+

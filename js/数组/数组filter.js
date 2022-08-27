@@ -8,7 +8,9 @@ Array.prototype._fiflter = function(fn){
     //res用来存放结果( 这是由于filter() 不会改变原始数组。)
     const res = [];
     for(let i = 0; i < this.length; i++){
-        fn(this[i])&&res.push(this[i]);
+        fn(this[i]) && res.push(this[i]);
     }
     return res;
 }
+
+

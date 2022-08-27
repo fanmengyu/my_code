@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. 绝对定位
+        .outer {
+            position: relative;
+            height: 100px;
+        }
+
+        .left {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: tomato;
+        }
+
+        .right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 100px;
+            background: gold;
+        }
+
+        .center {
+            margin-left: 100px;
+            margin-right: 200px;
+            height: 100px;
+            background: lightgreen;
+        } */
+
+        /* 2. flex
+        .outer {
+            display: flex;
+            height: 100px;
+        }
+
+        .left {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+        }
+
+        .right {
+            width: 200px;
+            height: 100px;
+            background: gold;
+        }
+
+        .center {
+            flex:1;
+            height: 100px;
+            background: lightgreen;
+        } */
+
+        /* 3. gird布局
+        .outer {
+            display: grid;
+            grid-template-columns: 100px auto 200px;
+            height: 100px;
+        }
+
+        .left {
+            height: 100px;
+            background: tomato;
+        }
+
+        .right {
+            height: 100px;
+            background: gold;
+        }
+
+        .center {
+            height: 100px;
+            background: lightgreen;
+        } */
+
+        /* 4.float：必须左右中的顺序才可以 */
+        .outer {
+            height: 100px;
+        }
+
+        .left {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: tomato;
+        }
+
+        .right {
+            float: right;
+            width: 200px;
+            height: 100px;
+            background: gold;
+        }
+
+        .center {
+            margin-left: 100px;
+            margin-right: 200px;
+            height: 100px;
+            background: lightgreen;
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="center">中</div>
+    </div>
+
+</body>
+
+</html>
